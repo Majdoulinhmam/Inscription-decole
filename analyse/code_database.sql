@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `myproject`.`Etudiant` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `Email_UNIQUE` ON `myproject`.`Etudiant` (`Email` ASC) VISIBLE;
+CREATE UNIQUE INDEX `Email_UNIQUE` ON `myproject`.`Etudiant` (`Email` ASC);
 
-CREATE UNIQUE INDEX `Telephone_UNIQUE` ON `myproject`.`Etudiant` (`Telephone` ASC) VISIBLE;
+CREATE UNIQUE INDEX `Telephone_UNIQUE` ON `myproject`.`Etudiant` (`Telephone` ASC);
 
 
 -- -----------------------------------------------------
@@ -82,13 +82,13 @@ CREATE TABLE IF NOT EXISTS `myproject`.`Inscription` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `id_UNIQUE` ON `myproject`.`Inscription` (`id` ASC) VISIBLE;
+CREATE UNIQUE INDEX `id_UNIQUE` ON `myproject`.`Inscription` (`id` ASC);
 
-CREATE INDEX `fk_Inscription_Annee_scolaire1_idx` ON `myproject`.`Inscription` (`Annee_scolaire_id` ASC) VISIBLE;
+CREATE INDEX `fk_Inscription_Annee_scolaire1_idx` ON `myproject`.`Inscription` (`Annee_scolaire_id` ASC);
 
-CREATE INDEX `fk_Inscription_Filiere1_idx` ON `myproject`.`Inscription` (`Filiere_id` ASC) VISIBLE;
+CREATE INDEX `fk_Inscription_Filiere1_idx` ON `myproject`.`Inscription` (`Filiere_id` ASC);
 
-CREATE INDEX `fk_Inscription_Etudiant1_idx` ON `myproject`.`Inscription` (`Etudiant_id` ASC) VISIBLE;
+CREATE INDEX `fk_Inscription_Etudiant1_idx` ON `myproject`.`Inscription` (`Etudiant_id` ASC);
 
 
 -- -----------------------------------------------------
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `myproject`.`Echeances` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Echeances_Inscription1_idx` ON `myproject`.`Echeances` (`Inscription_id` ASC) VISIBLE;
+CREATE INDEX `fk_Echeances_Inscription1_idx` ON `myproject`.`Echeances` (`Inscription_id` ASC);
 
 
 -- -----------------------------------------------------
@@ -127,9 +127,9 @@ CREATE TABLE IF NOT EXISTS `myproject`.`Paiement` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `id_UNIQUE` ON `myproject`.`Paiement` (`id` ASC) VISIBLE;
+CREATE UNIQUE INDEX `id_UNIQUE` ON `myproject`.`Paiement` (`id` ASC);
 
-CREATE INDEX `fk_Paiement_Echeances1_idx` ON `myproject`.`Paiement` (`Echeances_id` ASC) VISIBLE;
+CREATE INDEX `fk_Paiement_Echeances1_idx` ON `myproject`.`Paiement` (`Echeances_id` ASC);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
